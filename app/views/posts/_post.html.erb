@@ -1,0 +1,28 @@
+<article class="post">
+    <section class="post-head">
+        <h2><%= link_to post.title, post_path(post) %></h2>
+        <small>
+            <time><%= post.created_at.strftime("%d %B, %Y") %></time>
+            <% if user_signed_in?%>
+            <% if post.category.present? && current_user.admin?  %>
+                |
+                <%= link_to post.category.name, post.category %>
+            <% end %>
+            |
+            <%= link_to "Змінити", edit_admin_post_path(post) %>
+            |
+            <%= link_to "Видалити", admin_post_path(post), method: :delete, data: {confirm: "Ви впевненні, що бажаєте видалити дану статтю?"} %>
+            <% end %>
+        </small>
+    </section>
+
+    <section class="post-summary clearfix">
+        <%= image_tag post.image.url(:thumb), class: 'img-thumbnail thumb' if post.image? %>
+        <%= post.summary %>
+    </section>
+
+        <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'badge bg-primary'}.join(' ') %>
+    <section class="footer-summary">
+    </section>
+</article>
+

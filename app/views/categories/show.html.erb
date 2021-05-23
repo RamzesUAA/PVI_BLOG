@@ -1,0 +1,11 @@
+<%= render 'shared/breadcrumb', category: @category %>
+
+<h1>
+    <%= @category.name %>
+</h1>
+
+<section class="posts">
+    <%= render @posts%>
+</section>
+
+<%= paginate @posts %>

@@ -1,0 +1,31 @@
+ua:
+  common:
+    errors: 'При заповненні форми виникли помилки'
+    back: 'Назад'
+  will_paginate:
+  previous_page: '&larr Туди'
+  next_page: '&rall Сюда'
+  posts:
+    index:
+      title: 'Статті'
+  admin:
+    posts:
+      new:
+        title: 'Нова стаття'
+      edit:
+        title: 'Коригування статті'
+      form:
+        submit:
+          '%{action} статтю'
+    categories:
+      index:
+        title: 'Категорії'
+      new:
+        title: 'Нова категорія'
+      edit:
+        title: 'Коригування категорії'
+      form:
+        submit:
+          '%{action} категорії'
+      
+
